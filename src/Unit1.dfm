@@ -1,0 +1,84 @@
+object Form1: TForm1
+  Left = 678
+  Top = 166
+  BorderStyle = bsToolWindow
+  Caption = 'Form1'
+  ClientHeight = 392
+  ClientWidth = 401
+  Color = clWhite
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  PixelsPerInch = 96
+  TextHeight = 13
+  object EU: TImage
+    Left = 272
+    Top = 168
+    Width = 81
+    Height = 81
+  end
+  object ALVO: TImage
+    Left = 88
+    Top = 66
+    Width = 50
+    Height = 50
+  end
+  object Label1: TLabel
+    Left = 8
+    Top = 8
+    Width = 35
+    Height = 13
+    Caption = 'OURO:'
+  end
+  object PONTOS: TLabel
+    Left = 56
+    Top = 8
+    Width = 6
+    Height = 13
+    Caption = '0'
+  end
+  object USER: TLabel
+    Left = 176
+    Top = 32
+    Width = 30
+    Height = 13
+    Caption = 'USER'
+    Visible = False
+  end
+  object CONN: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=E:\DE' +
+      'LPHI GAME\Delphi.mdb;Mode=Share Deny None;Jet OLEDB:System datab' +
+      'ase="";Jet OLEDB:Registry Path="";Jet OLEDB:Database Password=""' +
+      ';Jet OLEDB:Engine Type=5;Jet OLEDB:Database Locking Mode=1;Jet O' +
+      'LEDB:Global Partial Bulk Ops=2;Jet OLEDB:Global Bulk Transaction' +
+      's=1;Jet OLEDB:New Database Password="";Jet OLEDB:Create System D' +
+      'atabase=False;Jet OLEDB:Encrypt Database=False;Jet OLEDB:Don'#39't C' +
+      'opy Locale on Compact=False;Jet OLEDB:Compact Without Replica Re' +
+      'pair=False;Jet OLEDB:SFP=False;'
+    LoginPrompt = False
+    Mode = cmShareDenyNone
+    Provider = 'Microsoft.Jet.OLEDB.4.0'
+    Left = 368
+    Top = 8
+  end
+  object CMD: TADOCommand
+    Connection = CONN
+    Parameters = <>
+    Left = 336
+    Top = 8
+  end
+  object TIMER: TTimer
+    Enabled = False
+    Interval = 1
+    OnTimer = TIMERTimer
+    Left = 8
+    Top = 360
+  end
+end
